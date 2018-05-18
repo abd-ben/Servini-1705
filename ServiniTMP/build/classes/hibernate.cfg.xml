@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+
+		<!-- Database connection settings -->
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost/servininotmp</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password"></property>
+
+		<!-- JDBC connection pool (use the built-in) -->
+		<property name="connection.pool_size">100</property>
+
+		<!-- SQL dialect -->
+		<property name="dialect">org.hibernate.dialect.MySQL57Dialect</property>
+
+		<!-- Enable Hibernate's automatic session context management -->
+		<property name="current_session_context_class">thread</property>
+
+		<!-- Disable the second-level cache -->
+		<property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+
+		<!-- Echo all executed SQL to stdout -->
+		<property name="show_sql">true</property>
+
+		<!-- Drop and re-create the database schema on startup -->
+
+		<property name="hbm2ddl.auto">update</property>
+
+		<mapping class="servini.bean.Achat" />
+		<mapping class="servini.bean.Administrateur" />
+		<mapping class="servini.bean.Carnet" />
+		<mapping class="servini.bean.Categorie" />
+		<mapping class="servini.bean.Client" />
+		<mapping class="servini.bean.Commande" />
+		<mapping class="servini.bean.Commercant" />
+		<mapping class="servini.bean.Evaluation" />
+		<mapping class="servini.bean.Fournisseur" />
+		<mapping class="servini.bean.LigneCommande" />
+		<mapping class="servini.bean.Livreur" />
+		<mapping class="servini.bean.Personne" />
+		<mapping class="servini.bean.Produit" />
+		<mapping class="servini.bean.Stock" />
+		<mapping class="servini.bean.Vente" />
+
+
+	</session-factory>
+</hibernate-configuration>
